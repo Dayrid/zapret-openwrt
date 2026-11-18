@@ -299,7 +299,7 @@ jobs:
           if [ "$MAX_SPEED" != "true" ]; then
               make $PKGLIST V=s BUILD_LOG=1 -j1
           else
-              make $PKGLIST -j$MAKE_JOBS V=s
+              make $PKGLIST -j1 V=s
           fi
           echo "status=success" >> $GITHUB_OUTPUT
 

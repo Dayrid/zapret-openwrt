@@ -297,9 +297,9 @@ jobs:
           MAKE_JOBS=$(nproc)
           echo "$MAKE_JOBS thread compile"
           if [ "$MAX_SPEED" != "true" ]; then
-              make $PKGLIST V=sc BUILD_LOG=1
+              make $PKGLIST V=s BUILD_LOG=1 -j1
           else
-              make $PKGLIST -j$MAKE_JOBS
+              make $PKGLIST -j$MAKE_JOBS V=s
           fi
           echo "status=success" >> $GITHUB_OUTPUT
 
